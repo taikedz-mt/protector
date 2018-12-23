@@ -673,6 +673,11 @@ dofile(MP .. "/tool.lua")
 dofile(MP .. "/hud.lua")
 dofile(MP .. "/lucky_block.lua")
 
+if minetest.get_modpath("areas") and areas.registerHudHandler and areas_integration then
+    dofile(minetest.get_modpath("protector") .. "/areas.lua")
+end
+
+
 
 -- stop mesecon pistons from pushing protectors
 if minetest.get_modpath("mesecons_mvps") then
